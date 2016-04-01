@@ -1,0 +1,33 @@
+{
+    "links": {
+        "sidebar":
+        {
+            "Digital School": "http://dschool.edu.gr"
+        }
+        ,"sharing": {
+            "weibo": null
+        }
+    },
+    "plugins": [
+        "-mathjax",
+        "-infinitescroll",
+        "richquotes",
+        "jsbin",
+        "anchors",
+        "callouts",
+        "-image-captions"
+    ],
+    "pluginsConfig": {
+        "fontSettings": {
+            "theme": "white",
+            "family": "sans"
+        },
+        "image-captions": {
+            "caption": "Fig. _BOOK_IMAGE_NUMBER_: _CAPTION_"
+        }
+    },
+    "pdf": {
+        "headerTemplate": "Header of the PDF with _TITLE_",
+        "footerTemplate": "Footer HTML template. Available variables: _PAGENUM_, _TITLE_, _AUTHOR_ and _SECTION_."
+    }
+}
