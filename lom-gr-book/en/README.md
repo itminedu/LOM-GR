@@ -6,6 +6,6 @@
 
 
 > #### Note::Σημείωση
-> * Έκδοση: `{{book.version}}`
+> * Έκδοση: `{{book.book_version}}`
 > * Αρχείο: `{{file.path}}`
 > * Ενημέρωση: `{{file.mtime}}`
