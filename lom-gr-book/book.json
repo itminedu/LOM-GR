@@ -1,6 +1,9 @@
 {
   "title":  "The LOM-GR Book",
   "language": "el",
+  "gitbook": "3.0.0-pre.14",
+  "language": "el",
+  "author": "CTI Diophantus, DSchool team",
   "styles": {
     "website": "styles/website.css",
     "pdf": "styles/pdf.css"
@@ -17,14 +20,10 @@
     }
   },
   "plugins": [
-    "-mathjax",
-    "-infinitescroll",
-    "-image-captions",
     "richquotes",
     "jsbin",
     "anchors",
     "callouts",
-    "-autocover"
   ],
   "pluginsConfig": {
     "fontSettings": {
@@ -36,8 +35,6 @@
     }
   },
   "pdf": {
-    "headerTemplate": "_SECTION_",
-    "footerTemplate": "_TITLE_, _PAGENUM_",
     "fontSize": 12,
     "paperSize": "a4"
   }
