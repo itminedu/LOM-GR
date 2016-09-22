@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" attributeFormDefault="unqualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+	vc:maxVersion="1.1" vc:minVersion="1.0" >
+    	<!-- =============================================  -->
+	<!-- =              Vocabularies                 =  -->
+	<!-- =============================================  -->
+
+	<simpleType name="structure">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ατομική"/>
+			<enumeration value="συλλογή"/>
+			<enumeration value="δικτυωμένη"/>
+			<enumeration value="ιεραρχική"/>
+			<enumeration value="γραμμική"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="aggregationLevel">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ατομικό μαθησιακό αντικείμενο"/>
+			<enumeration value="σύνθετο μαθησιακό αντικείμενο"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="status">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="προσχέδιο"/>
+			<enumeration value="τελικό"/>
+			<enumeration value="αναθεωρημένο"/>
+			<enumeration value="μη διαθέσιμο"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="role">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="δημιουργός"/>
+			<enumeration value="εμπνευστής"/>
+			<enumeration value="επικυρωτής"/>
+			<enumeration value="επιμελητής"/>
+			<enumeration value="τεχνικός υλοποίησης"/>
+			<enumeration value="πάροχος περιεχομένου"/>
+			<enumeration value="τεχνικός επικυρωτής"/>
+			<enumeration value="παιδαγωγικός επικυρωτής"/>
+			<enumeration value="συγγραφέας σεναρίου"/>
+			<enumeration value="υπεύθυνος παιδαγωγικού σχεδιασμού"/>
+			<enumeration value="ειδήμων γνωστικού αντικειμένου"/>
+			<enumeration value="συντονιστής ομάδας σχεδιασμού και ανάπτυξης"/>
+			<enumeration value="επιστημονικός υπεύθυνος"/>
+			<enumeration value="αδειοδότης"/>
+			<enumeration value="χορηγός"/>
+			<enumeration value="πιστοποιητής"/>
+			<enumeration value="άγνωστος"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="metaRole">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="μετασχολιαστής"/>
+			<enumeration value="εμπλουτιστής"/>
+			<enumeration value="πάροχος"/>
+			<enumeration value="επικυρωτής"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="techReqType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="λειτουργικό σύστημα"/>
+			<enumeration value="φυλλομετρητής"/>
+			<enumeration value="πρόσθετα"/>
+			<enumeration value="λογισμικό"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="techReqName">
+		<restriction base="token">
+			<!-- IEEE LOM default values -->
+			<enumeration value="any"/>
+			<enumeration value="netscape communicator"/>
+			<enumeration value="ms-internet explorer"/>
+			<enumeration value="opera"/>
+			<enumeration value="amaya"/>
+			<enumeration value="pc-dos"/>
+			<enumeration value="ms-windows"/>
+			<enumeration value="macos"/>
+			<enumeration value="unix"/>
+			<enumeration value="multi-os"/>
+			<enumeration value="none"/>
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="linux"/>				<!-- os -->
+			<enumeration value="mozilla firefox"/>		<!-- browsers -->
+			<enumeration value="safari"/>
+			<enumeration value="google chrome"/>
+			<enumeration value="adobe flash player"/>	<!-- plugin -->
+			<enumeration value="quickTime"/>
+			<enumeration value="real player"/>
+			<enumeration value="media player"/>
+			<enumeration value="microsoft silverlight"/>
+			<enumeration value="geogebra"/>
+			<enumeration value="geogebra 3.2 libraries (by Photodentro)"/>
+			<enumeration value="geogebra 4.0 libraries (by Photodentro)"/>
+			<enumeration value="google earth plugin"/>
+			<enumeration value="adobe shockwave player"/>
+			<enumeration value="google spreadsheets"/>
+			<enumeration value="imagine logo"/>
+			<enumeration value="java"/>
+			<enumeration value="e-slate click and play"/>		</restriction>
+	</simpleType>
+
+	<simpleType name="mimeType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="interactivityType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ενεργό/διαδραστικό"/>
+			<enumeration value="αφηγηματικό"/>
+			<enumeration value="μικτό"/>	
+		</restriction>
+	</simpleType>
+
+	<simpleType name="learningResourceType">
+		<restriction base="token">
+			<!-- IEEE LOM default values -->
+			<enumeration value="άσκηση"/>
+			<enumeration value="προσομοίωση"/>
+			<enumeration value="ερωτηματολόγιο"/>
+			<enumeration value="διάγραμμα"/>
+			<enumeration value="σχήμα"/>
+			<enumeration value="γράφημα"/>
+			<enumeration value="ευρετήριο"/>
+			<enumeration value="διαφάνεια"/>
+			<enumeration value="πίνακας"/>
+			<enumeration value="αφηγηματικό κείμενο"/>
+			<enumeration value="διαγώνισμα"/>
+			<enumeration value="πείραμα"/>
+			<enumeration value="διατύπωση προβλήματος"/>
+			<enumeration value="αυτοαξιολόγηση"/>
+			<enumeration value="διάλεξη"/>			
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="εικόνα"/>
+			<enumeration value="κείμενο"/>
+			<enumeration value="ήχος"/>
+			<enumeration value="βίντεο"/>
+			<enumeration value="μοντέλο"/>
+			<enumeration value="αναπαραστάσεις δεδομένων"/>
+			<enumeration value="διερεύνηση"/>
+			<enumeration value="ανοιχτή δραστηριότητα"/>
+			<enumeration value="ερευνητική δραστηριότητα"/>
+			<enumeration value="έργο"/>
+			<enumeration value="εκπαιδευτικό παιχνίδι"/>
+			<enumeration value="ασκήσεις πρακτικής και εξάσκησης"/>
+			<enumeration value="αξιολόγηση"/>
+			<enumeration value="μελέτη περίπτωσης"/>
+			<enumeration value="επίδειξη"/>
+			<enumeration value="παρουσίαση"/>
+			<enumeration value="εκπαιδευτικό σενάριο - σχέδιο μαθήματος"/>
+			<enumeration value="μάθημα"/>
+			<enumeration value="παιχνίδι ρόλων"/>
+			<enumeration value="εφαρμογή"/>
+			<enumeration value="εργαλείο"/>
+			<enumeration value="γλωσσάρι"/>
+			<enumeration value="οδηγός"/>
+			<enumeration value="διδακτικό εγχειρίδιο"/>
+			<enumeration value="πηγή - αναφορά"/>
+			<enumeration value="αναμετάδοση"/>
+			<enumeration value="ιστοσελίδα"/>
+			<enumeration value="ιστολόγιο"/>
+			<enumeration value="wiki"/>
+			<enumeration value="μέσο κοινωνικής δικτύωσης"/>
+			<enumeration value="χάρτης"/>
+			<enumeration value="παρτιτούρα"/>
+			<enumeration value="εννοιολογικός χάρτης"/>
+			<enumeration value="άλλο"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="semanticDensity">
+		<restriction base="token">
+			<!-- IEEE LOM default values -->
+			<enumeration value="πολύ χαμηλό"/>
+			<enumeration value="χαμηλό"/>
+			<enumeration value="μεσαίο"/>
+			<enumeration value="υψηλό"/>
+			<enumeration value="πολύ υψηλό"/>
+			<!-- Photodentro DS AP extended values -->
+		</restriction>
+	</simpleType>
+
+	<simpleType name="intendedEndUserRole">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="μαθητής"/>
+			<enumeration value="εκπαιδευτικός"/>
+			<enumeration value="δημιουργός"/>
+			<enumeration value="διοικητικό στέλεχος"/>
+			<enumeration value="γονέας"/>
+			<enumeration value="σύμβουλος"/>
+			<enumeration value="άλλος"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="context">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="προσχολική"/>
+			<enumeration value="δημοτικό"/>
+			<enumeration value="γυμνάσιο"/>
+			<enumeration value="γενικό λύκειο"/>
+			<enumeration value="τεχνολογικό λύκειο"/>
+			<enumeration value="επαγγελματική σχολή"/>
+			<enumeration value="ειδική αγωγή"/>
+			<enumeration value="άλλο"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="difficulty">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="πολύ εύκολο"/>
+			<enumeration value="εύκολο"/>
+			<enumeration value="μεσαίο"/>
+			<enumeration value="δύσκολο"/>
+			<enumeration value="πολύ δύσκολο"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="kind">
+		<restriction base="token">
+			<!-- IEEE LOM default values -->
+			<enumeration value="είναιμέροςτου"/>
+			<enumeration value="έχειμέρος"/>
+			<enumeration value="είναιέκδοσητου"/>
+			<enumeration value="έχειέκδοση"/>
+			<enumeration value="είναιμορφήτου"/>
+			<enumeration value="έχειμορφή"/>
+			<enumeration value="αναφέρεταισε"/>
+			<enumeration value="αναφέρεταιαπό"/>
+			<enumeration value="βασίζεταισε"/>
+			<enumeration value="είναιβάσηγια"/>
+			<enumeration value="απαιτεί"/>
+			<enumeration value="απαιτείταιαπό"/>
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="έχειπροεπισκόπηση"/>
+			<enumeration value="είναιπροεπισκόπησητου"/>
+			<enumeration value="είναιμετάφρασητου"/>
+			<enumeration value="έχειμετάφραση"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="purpose">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="θεματική περιοχή"/>
+			<enumeration value="εκπαιδευτικός στόχος"/>
+			<enumeration value="επίπεδο γλωσσομάθειας"/>
+			<enumeration value="διδακτική/μαθησιακή προσέγγιση"/>
+			<enumeration value="ειδικές ανάγκες"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="yesNo">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ναι"/>
+			<enumeration value="όχι"/>
+		</restriction>
+	</simpleType>
+
+</schema>
