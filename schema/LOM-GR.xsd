@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
+<schema elementFormDefault="qualified" attributeFormDefault="unqualified" 
 	targetNamespace="http://gnosis.dschool.edu.gr/schema/LOM"
-	xmlns:lom="http://gnosis.dschool.edu.gr/schema/LOM" elementFormDefault="qualified"
- 	xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
- 	vc:maxVersion="1.1" vc:minVersion="1.0" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:lom="http://gnosis.dschool.edu.gr/schema/LOM"
+	xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+	vc:maxVersion="1.1" vc:minVersion="1.0" >
+
 
 	<element name="LOM" type="lom:LOM">
 		<annotation>
@@ -59,7 +61,7 @@
 				<complexType>
 					<sequence>
 						<element name="role" type="lom:role"/>
-						<element name="entity" type="vcard:vCard"/>
+						<element name="entity" type="lom:vcard"/>
 						<element name="date" type="date"/>
 					</sequence>
 				</complexType>
@@ -74,7 +76,7 @@
 				<complexType>
 					<sequence>
 						<element name="role" type="lom:metaRole"/>
-						<element name="entity" type="vcard:vCard" minOccurs="1" maxOccurs="10"/>
+						<element name="entity" type="lom:vcard" minOccurs="1" maxOccurs="10"/>
 						<element name="date" type="date"/>
 					</sequence>
 				</complexType>
@@ -156,7 +158,7 @@
 
 	<complexType name="annotation">
 		<sequence>
-			<element name="entity" type="vcard:vCard" minOccurs="0"/>
+			<element name="entity" type="lom:vcard" minOccurs="0"/>
 			<element name="date" type="date" minOccurs="0"/>
 			<element name="description" type="lom:langString" minOccurs="0"/>
 		</sequence>
@@ -200,25 +202,35 @@
 	<complexType name="langString">
 		<simpleContent>
 			<extension base="string">
-				<attribute type="language"/>
+				<attribute ref="lom:language"/>
 			</extension>
 		</simpleContent>
 	</complexType>
+	<attribute name="language" type="language" />
 
 	<complexType name="langToken">
 		<simpleContent>
 			<extension base="token">
-				<attribute type="language"/>
+				<attribute ref="lom:language"/>
 			</extension>
 		</simpleContent>
 	</complexType>
 
+	<!-- FIXME: -->
 	<complexType name="description"/>
+	
 	<complexType name="keyword">
 		<simpleContent>
 			<extension base="token"/>
 		</simpleContent>
 	</complexType>
+
+	<!-- FIXME: -->
+	<simpleType name="vcard">
+		<restriction base="string">
+			<pattern value=".!\[CDATA\[BEGIN:VCARD*END:VCARD\]\]" />
+		</restriction>
+	</simpleType>
 
 	<!-- =============================================  -->
 	<!-- =              Vocabularies                 =  -->
