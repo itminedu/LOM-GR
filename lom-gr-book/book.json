@@ -1,41 +1,27 @@
 {
-  "title":  "The LOM-GR Book",
-  "language": "el",
-  "gitbook": "3.0.0-pre.14",
-  "language": "el",
-  "author": "CTI Diophantus, DSchool team",
-  "styles": {
-    "website": "styles/website.css",
-    "pdf": "styles/pdf.css"
-  },
-  "variables": {
-    "book_version": "0.0.1"
-  },
-  "links": {
-    "sidebar": {
-      "Digital School": "http://dschool.edu.gr"
+    "title": "The LOM-GR Book",
+    "language": "el",
+    "gitbook": "3.2.0",
+    "author": "CTI Diophantus, DSchool team",
+    "styles": {
+        "website": "styles/website.css",
+        "pdf": "styles/pdf.css"
     },
-    "sharing": {
-      "weibo": null
-    }
-  },
-  "plugins": [
-    "richquotes",
-    "jsbin",
-    "anchors",
-    "callouts",
-  ],
-  "pluginsConfig": {
-    "fontSettings": {
-      "theme": "white",
-      "family": "sans"
+    "variables": {
+        "book_version": "0.0.1"
     },
-    "image-captions": {
-      "caption": "Fig. _BOOK_IMAGE_NUMBER_: _CAPTION_"
+    "plugins": [
+        "bootstrap-callout"
+    ],
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "white",
+            "family": "sans",
+            "size": 2
+        }
+    },
+    "pdf": {
+        "fontSize": 12,
+        "paperSize": "a4"
     }
-  },
-  "pdf": {
-    "fontSize": 12,
-    "paperSize": "a4"
-  }
 }

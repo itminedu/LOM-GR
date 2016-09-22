@@ -1,5 +1,3 @@
-# ΕΙΣΑΓΩΓΗ
-
 Το παρόν έγγραφο παρουσιάζει το προφίλ εφαρμογών μεταδεδομένων (Metadata Application Profile) για τον μετασχολιασμό (περιγραφή με μεταδεδομένα) του ψηφιακού εκπαιδευτικού περιεχομένου που συσσωρεύεται στον Πανελλήνιο Συσσωρευτή Εκπαιδευτικού Περιεχομένου "Φωτόδεντρο".
 
 Το διεθνές πρότυπο εκπαιδευτικών μεταδεδομένων, IEEE Learning Object Metadata standard LOM, επιλέχθηκε ως βάση για τα Προφίλ Εφαρμογής Μεταδεδομένων των Αποθετηρίων Εκπαιδευτικού Περιεχομένου (που ονομάζονται «Φωτόδεντρα») για το επίσημο Ελληνικό Εκπαιδευτικό Σύστημα.  Η συμβατότητα με τα διεθνή πρότυπα είναι απαίτηση ώστε να εξασφαλίζεται η  διαλειτουργικότητα μεταξύ των αποθετηρίων σε εθνικό, ευρωπαϊκό και διεθνές επίπεδο.
@@ -26,14 +24,3 @@
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>Διανείμεται με άδεια <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International</a>.
 
 
-# Chapters about GitBook
-
-{% for article in glossary.terms['gitbook'].articles %}
-* [{{ article.title }}]({{ article.path }})
-{% endfor %}
-
-
-> #### Note::Σημείωση
-> * Έκδοση: `{{book.book_version}}`
-> * Αρχείο: `{{file.path}}`
-> * Ενημέρωση: `{{file.mtime}}`
