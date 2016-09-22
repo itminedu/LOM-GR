@@ -1,3 +1,5 @@
+# Photodentro LOM-GR IEEE Application Profile
+
 Το παρόν έγγραφο παρουσιάζει το προφίλ εφαρμογών μεταδεδομένων (Metadata Application Profile) για τον μετασχολιασμό (περιγραφή με μεταδεδομένα) του ψηφιακού εκπαιδευτικού περιεχομένου που συσσωρεύεται στον Πανελλήνιο Συσσωρευτή Εκπαιδευτικού Περιεχομένου "Φωτόδεντρο".
 
 Το διεθνές πρότυπο εκπαιδευτικών μεταδεδομένων, IEEE Learning Object Metadata standard LOM, επιλέχθηκε ως βάση για τα Προφίλ Εφαρμογής Μεταδεδομένων των Αποθετηρίων Εκπαιδευτικού Περιεχομένου (που ονομάζονται «Φωτόδεντρα») για το επίσημο Ελληνικό Εκπαιδευτικό Σύστημα.  Η συμβατότητα με τα διεθνή πρότυπα είναι απαίτηση ώστε να εξασφαλίζεται η  διαλειτουργικότητα μεταξύ των αποθετηρίων σε εθνικό, ευρωπαϊκό και διεθνές επίπεδο.
@@ -20,7 +22,8 @@
 * **ΠΑΡΑΡΤΗΜΑ ΙII**: `Photodentro Aggregator IEEE LOM AP v1.0 TECHNICAL FACTSHEET` Excel file με το Προφίλ Εφαρμογής Μεταδεδομένων για τον Πανελλήνιο Συσσωρευτή Εκπαιδευτικού Περιεχομένου Φωτόδεντρο Έκδοση 1.0 (`Photodentro Aggregator_IEEE-LOM-TECHNICAL-FACTSHEET_v1.0.xlsx`)
 * **ΠΑΡΑΡΤΗΜΑ IV**:  `Photodentro Aggregator IEEE LOM AP v1.0 Κωδικοποίηση XSD (XML Schema)` Κωδικοποίηση XSD (XML Schema) του Προφίλ Εφαρμογής Μεταδεδομένων για τον Πανελλήνιο Συσσωρευτή Εκπαιδευτικού Περιεχομένου Φωτόδεντρο  Έκδοση 1.0 (`Photodentro Aggregator_AP_v1.0.xsd`)
 
+---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>Διανείμεται με άδεια <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>&nbsp;&nbsp;Διανείμεται με άδεια <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International</a>.
 
 
