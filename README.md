@@ -7,7 +7,7 @@
 
 ## Credits
 
-LOM-GR has been developed for the _"[Photodentro][3]"_ infrastructure of repositories of open educational resources, as part of the _"Digital School"_ large scale national initiative of the Greek Ministry of Education (MoE) for the modernization of school education in Greece ([dschool.edu.gr][2]).
+LOM-GR has been developed for the _"[Photodentro][3]"_ ecosystem of repositories of open educational resources, as part of the _"Digital School"_ large scale national initiative of the Greek Ministry of Education (MoE) for the modernization of school education in Greece ([dschool.edu.gr][2]).
 
 _Attribution:_ A number of terms of controlled vocabularies used by "LOM-GR Photodentro" are based on the _"Learning Resource Exchange (LRE)"_ LOM AP.
 
