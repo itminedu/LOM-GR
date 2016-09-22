@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://gnosis.dschool.edu.gr/schema/LOM"
+	xmlns:lom="http://gnosis.dschool.edu.gr/schema/LOM" elementFormDefault="qualified"
+	vc:maxVersion="1.1" vc:minVersion="1.0" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+
+	<element name="LOM" type="lom:LOM">
+		<annotation>
+			<documentation>IEEE LOM-GR, Photodentro Application Profile
+			</documentation>
+		</annotation>
+	</element>
+
+	<complexType name="LOM">
+		<annotation>
+			<documentation xml:lang="en">
+				IEEE LOM Photodentro Digital
+				School (DS) Application Profile
+				version 4.0.1
+				September 2016
+				Computer
+				Technology Institute and Press "Diophantus"
+			</documentation>
+		</annotation>
+		<sequence minOccurs="1" maxOccurs="1">
+			<!-- <element name="general" type="lom:general" maxOccurs="1" minOccurs="1"/> -->
+			<element name="general" type="lom:general" minOccurs="1" maxOccurs="1"/>
+			<element name="lifeCycle" type="lom:lifeCycle" minOccurs="1" maxOccurs="1"/>
+			<element name="metaMetadata" type="lom:metaMetadata" minOccurs="1" maxOccurs="1"/>
+			<element name="technical" type="lom:technical" minOccurs="1" maxOccurs="1"/>
+			<element name="educational" type="lom:educational" minOccurs="1" maxOccurs="1"/>
+			<element name="rights" type="lom:rights" minOccurs="0" maxOccurs="1"/>
+			<element name="relation" type="lom:relation" minOccurs="0" maxOccurs="1"/>
+			<element name="annotation" type="lom:annotation" minOccurs="0" maxOccurs="1"/>
+			<element name="classification" type="lom:classification" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="general">
+		<sequence>
+			<element name="identifier" type="lom:identifier"/>
+			<element name="title" type="lom:langString" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="language" type="language" minOccurs="1" maxOccurs="10"/>
+			<element name="description" type="lom:langString" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="keyword" type="lom:langToken" minOccurs="0" maxOccurs="30"/>
+			<element name="coverage" type="lom:langString" minOccurs="0" maxOccurs="10"/>
+			<element name="structure" type="lom:structure" minOccurs="0" maxOccurs="1"/>
+			<element name="aggregationLevel" type="lom:aggregationLevel" minOccurs="0" maxOccurs="1"
+			/>
+		</sequence>
+	</complexType>
+
+	<complexType name="lifeCycle">
+		<sequence>
+			<element name="version" type="lom:langString" minOccurs="0"/>
+			<element name="status" type="lom:status" minOccurs="0"/>
+			<element name="contribute" minOccurs="0" maxOccurs="30">
+				<complexType>
+					<sequence>
+						<element name="role" type="lom:role"/>
+						<element name="entity" type="lom:vCard"/>
+						<element name="date" type="date"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="metaMetadata">
+		<sequence>
+			<element name="identifier" type="lom:identifier"/>
+			<element name="contribute" minOccurs="1" maxOccurs="10">
+				<complexType>
+					<sequence>
+						<element name="role" type="lom:metaRole"/>
+						<element name="entity" type="lom:vCard" minOccurs="1" maxOccurs="10"/>
+						<element name="date" type="date"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="metadataSchema" type="string" maxOccurs="10"/>
+			<element name="language" type="language"/>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="technical">
+		<sequence>
+			<element name="format" type="lom:mimeType" maxOccurs="40"/>
+			<element name="size" type="string" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="location" type="string" maxOccurs="10"/>
+			<element name="requirement" minOccurs="0" maxOccurs="40">
+				<complexType>
+					<sequence>
+						<element name="orComposite" minOccurs="0" maxOccurs="40">
+							<complexType>
+								<sequence>
+									<element name="type" type="lom:techReqType" minOccurs="0"/>
+									<element name="name" type="lom:techReqName" minOccurs="0"/>
+									<element name="minimumVersion" type="string" minOccurs="0"/>
+									<element name="maximumVersion" type="string" minOccurs="0"/>
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="installationRemarks" type="lom:langString" minOccurs="0"/>
+			<element name="otherPlatformRequirements" type="lom:langString" minOccurs="0"/>
+			<element name="duration" type="date" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="educational">
+		<sequence>
+			<element name="interactivityType" type="lom:interactivityType" minOccurs="0"/>
+			<element name="learningResourceType" type="lom:learningResourceType" minOccurs="0"
+				maxOccurs="10"/>
+			<element name="semanticDensity" type="lom:semanticDensity" minOccurs="0"/>
+			<element name="intendedEndUserRole" type="lom:intendedEndUserRole" minOccurs="0"
+				maxOccurs="10"/>
+			<element name="context" type="lom:context" minOccurs="0" maxOccurs="10"/>
+			<element name="typicalAgeRange" type="lom:langString" minOccurs="0"/>
+			<element name="difficulty" type="lom:difficulty" minOccurs="0"/>
+			<element name="typicalLearningTime" type="date" minOccurs="0"/>
+			<element name="description" type="lom:langString" minOccurs="0" maxOccurs="10"/>
+			<element name="language" type="language" minOccurs="0" maxOccurs="10"/>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="rights">
+		<sequence>
+			<element name="cost" type="lom:yesNo"/>
+			<element name="copyrightAndOtherRestrictions" type="lom:yesNo"/>
+			<element name="description" type="lom:langString" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="relation">
+		<sequence>
+			<element name="kind" type="lom:kind" minOccurs="0"/>
+			<element name="resource" minOccurs="0">
+				<complexType>
+					<sequence>
+						<element name="identifier" type="lom:identifier" minOccurs="0"
+							maxOccurs="10"/>
+						<element name="description" type="lom:langString" minOccurs="0"
+							maxOccurs="10"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="annotation">
+		<sequence>
+			<element name="entity" type="lom:vCard" minOccurs="0"/>
+			<element name="date" type="date" minOccurs="0"/>
+			<element name="description" type="lom:langString" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="classification">
+		<sequence>
+			<element name="purpose" type="lom:purpose"/>
+			<element name="taxonPath" maxOccurs="15">
+				<complexType>
+					<sequence>
+						<element name="source" type="lom:langString"/>
+						<element name="taxon" maxOccurs="15">
+							<complexType>
+								<sequence>
+									<element name="id" type="token"/>
+									<element name="entry" type="lom:langString"/>
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="description" type="lom:langString" minOccurs="0"/>
+			<element name="keyword" type="lom:langString" minOccurs="0" maxOccurs="40"/>
+		</sequence>
+	</complexType>
+
+
+
+
+
+
+
+
+	<complexType name="identifier">
+		<sequence>
+			<element name="catalogue" type="string"/>
+			<element name="entry" type="ID"/>
+		</sequence>
+	</complexType>
+
+
+
+	<complexType name="langString">
+		<simpleContent>
+			<extension base="string">
+				<attribute ref="lom:lang"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<attribute name="lang" type="language"/>
+
+	<complexType name="langToken">
+		<simpleContent>
+			<extension base="token">
+				<attribute ref="lom:lang"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+
+	<complexType name="description"/>
+	<complexType name="keyword">
+		<simpleContent>
+			<extension base="token"/>
+		</simpleContent>
+	</complexType>
+
+	<simpleType name="structure">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ατομική"/>
+			<enumeration value="συλλογή"/>
+			<enumeration value="δικτυωμένη"/>
+			<enumeration value="ιεραρχική"/>
+			<enumeration value="γραμμική"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="aggregationLevel">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ατομικό μαθησιακό αντικείμενο"/>
+			<enumeration value="σύνθετο μαθησιακό αντικείμενο"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="status">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="προσχέδιο"/>
+			<enumeration value="τελικό"/>
+			<enumeration value="αναθεωρημένο"/>
+			<enumeration value="μη διαθέσιμο"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="role">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="δημιουργός"/>
+			<enumeration value="εμπνευστής"/>
+			<enumeration value="επικυρωτής"/>
+			<enumeration value="επιμελητής"/>
+			<enumeration value="τεχνικός υλοποίησης"/>
+			<enumeration value="πάροχος περιεχομένου"/>
+			<enumeration value="τεχνικός επικυρωτής"/>
+			<enumeration value="παιδαγωγικός επικυρωτής"/>
+			<enumeration value="συγγραφέας σεναρίου"/>
+			<enumeration value="υπεύθυνος παιδαγωγικού σχεδιασμού"/>
+			<enumeration value="ειδήμων γνωστικού αντικειμένου"/>
+			<enumeration value="συντονιστής ομάδας σχεδιασμού και ανάπτυξης"/>
+			<enumeration value="επιστημονικός υπεύθυνος"/>
+			<enumeration value="αδειοδότης"/>
+			<enumeration value="χορηγός"/>
+			<enumeration value="πιστοποιητής"/>
+			<enumeration value="άγνωστος"/>
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="metaRole">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="μετασχολιαστής"/>
+			<enumeration value="εμπλουτιστής"/>
+			<enumeration value="πάροχος"/>
+			<enumeration value="επικυρωτής"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="techReqType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="techReqName">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="άσκηση"/>
+			<enumeration value="προσομοίωση"/>
+			<enumeration value="ερωτηματολόγιο"/>
+			<enumeration value="διάγραμμα"/>
+			<enumeration value="σχήμα"/>
+			<enumeration value="γράφημα"/>
+			<enumeration value="ευρετήριο"/>
+			<enumeration value="διαφάνεια"/>
+			<enumeration value="πίνακας"/>
+			<enumeration value="αφηγηματικό κείμενο"/>
+			<enumeration value="διαγώνισμα"/>
+			<enumeration value="πείραμα"/>
+			<enumeration value="διατύπωση προβλήματος"/>
+			<enumeration value="αυτοαξιολόγηση"/>
+			<enumeration value="διάλεξη"/>
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="εικόνα"/>
+			<enumeration value="κείμενο"/>
+			<enumeration value="ήχος"/>
+			<enumeration value="βίντεο"/>
+			<enumeration value="μοντέλο"/>
+			<enumeration value="αναπαραστάσεις δεδομένων"/>
+			<enumeration value="διερεύνηση"/>
+			<enumeration value="ανοιχτή δραστηριότητα"/>
+			<enumeration value="ερευνητική δραστηριότητα"/>
+			<enumeration value="έργο"/>
+			<enumeration value="εκπαιδευτικό παιχνίδι"/>
+			<enumeration value="ασκήσεις πρακτικής και εξάσκησης"/>
+			<enumeration value="αξιολόγηση"/>
+			<enumeration value="μελέτη περίπτωσης"/>
+			<enumeration value="επίδειξη"/>
+			<enumeration value="παρουσίαση"/>
+			<enumeration value="εκπαιδευτικό σενάριο - σχέδιο μαθήματος"/>
+			<enumeration value="μάθημα"/>
+			<enumeration value="παιχνίδι ρόλων"/>
+			<enumeration value="εφαρμογή"/>
+			<enumeration value="εργαλείο"/>
+			<enumeration value="γλωσσάρι"/>
+			<enumeration value="οδηγός"/>
+			<enumeration value="διδακτικό εγχειρίδιο"/>
+			<enumeration value="πηγή - αναφορά"/>
+			<enumeration value="αναμετάδοση"/>
+			<enumeration value="ιστοσελίδα"/>
+			<enumeration value="ιστολόγιο"/>
+			<enumeration value="wiki"/>
+			<enumeration value="μέσο κοινωνικής δικτύωσης"/>
+			<enumeration value="χάρτης"/>
+			<enumeration value="παρτιτούρα"/>
+			<enumeration value="εννοιολογικός χάρτης"/>
+			<enumeration value="άλλο"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="mimeType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="interactivityType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="learningResourceType">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="semanticDensity">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="intendedEndUserRole">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="context">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="difficulty">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="kind">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="purpose">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="one"/>
+			<enumeration value="two"/>
+			<enumeration value="three"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="yesNo">
+		<restriction base="token">
+			<!-- Photodentro DS AP extended values -->
+			<enumeration value="ναι"/>
+			<enumeration value="όχι"/>
+		</restriction>
+	</simpleType>
+
+	<!-- FIXME -->
+	<simpleType name="vCard">
+		<restriction base="string"/>
+	</simpleType>
+
+</schema>
