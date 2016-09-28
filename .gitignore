@@ -1,3 +1,4 @@
 */node_modules/*
 */_book/*
 /lom-gr-book/book*pdf
+.project
