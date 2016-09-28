@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+	<responseDate>2016-09-14T12:22:24Z</responseDate>
+	<request identifier="oai:oaicat.eun.org:441564" metadataPrefix="oai_lre4" verb="GetRecord">http://lrecacheprod.eun.org:8080/oaitarget/OAIHandler</request>
+	<GetRecord>
+		<record>
+			<header>
+				<identifier>oai:oaicat.eun.org:441564</identifier>
+				<datestamp>2016-09-07T22:56:17Z</datestamp>
+			</header>
+			<metadata>
+				<work xmlns="http://www.imsglobal.org/xsd/imsloilox_v1p0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsloilox_v1p0 http://www.imsglobal.org/xsd/imsloilox_v1p0.xsd">
+					<identifier>
+						<catalog>work-cmr-id</catalog>
+						<entry>441564</entry>
+					</identifier>
+					<identifier>
+						<catalog>geogebratube.org</catalog>
+						<entry>http://ggbtu.be/m22382</entry>
+					</identifier>
+
+					<description>
+						<facet>
+							<vocabularyID>LRE.workDescriptionFacetValues</vocabularyID>
+							<value>license</value>
+						</facet>
+						<metadata>
+							<schema>
+								http://ltsc.ieee.org/xsd/LOM/imslode/ilox/any/rights</schema>
+							<lom xmlns="http://ltsc.ieee.org/xsd/LOM/imslode/ilox/any/rights" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM/imslode/ilox/any/rights http://www.imsglobal.org/profile/lode/lodev1p0/lodev1p0_ilox_any_rights_lom_v1p0.xsd">
+								<rights>
+									<cost>
+										<source>costValues</source>
+										<value>no</value>
+									</cost>
+									<copyrightAndOtherRestrictions>
+										<source>copyrightAndOtherRestrictionsValues</source>
+										<value>yes</value>
+									</copyrightAndOtherRestrictions>
+									<description>
+										<string language="x-t-cc-url">http://creativecommons.org/licenses/by-sa/3.0/</string>
+									</description>
+								</rights>
+							</lom>
+						</metadata>
+					</description>
+					<description>
+						<facet>
+							<vocabularyID>LRE.workDescriptionFacetValues</vocabularyID>
+							<value>main</value>
+						</facet>
+						<metadata>
+							<schema>http://ltsc.ieee.org/xsd/LOM</schema>
+							<lom xmlns="http://ltsc.ieee.org/xsd/LOM" xsi:schemaLocation="http://ltsc.ieee.org/xsd/LOM http://ltsc.ieee.org/xsd/lomv1.0/lomLoose.xsd">
+								<general>
+									<title>
+										<string language="es">Pendiente y ordenada al origen de la recta</string>
+									</title>
+									<description>
+										<string language="es">Pendiente y ordenada al origen de la recta</string>
+									</description>
+									<keyword>
+										<string language="en">GeoGebra</string>
+									</keyword>
+									<keyword>
+										<string language="es">pendiente</string>
+									</keyword>
+									<keyword>
+										<string language="es">ordenada</string>
+									</keyword>
+								</general>
+								<educational>
+									<learningResourceType>
+										<source>LRE.learningResourceTypeValues</source>
+										<value>simulation</value>
+									</learningResourceType>
+									<intendedEndUserRole>
+										<source>LRE.intendedEndUserRoleValues</source>
+										<value>learner</value>
+									</intendedEndUserRole>
+									<intendedEndUserRole>
+										<source>LRE.intendedEndUserRoleValues</source>
+										<value>teacher</value>
+									</intendedEndUserRole>
+									<context>
+										<source>LRE.contextValues</source>
+										<value>compulsory education</value>
+									</context>
+									<typicalAgeRange>
+										<string language="x-t-lre">11-14</string>
+									</typicalAgeRange>
+								</educational>
+								<metaMetadata>
+									<contribute>
+										<role>
+											<source>roleValue</source>
+											<value>author</value>
+										</role>
+										<entity>BEGIN:VCARD FN:Prof. Claudia L. Romero VERSION:3.0 END:VCARD</entity>
+										<date>
+											<dateTime>2012-11-19</dateTime>
+										</date>
+									</contribute>
+									<contribute>
+										<role>
+											<source>roleValue</source>
+											<value>publisher</value>
+										</role>
+										<entity>BEGIN:VCARD FN:GeoGebraTube ORG:International GeoGebra Institute EMAIL:webmaster@geogebra.org VERSION:3.0 END:VCARD</entity>
+										<date>
+											<dateTime>2012-11-21</dateTime>
+										</date>
+									</contribute>
+									<metadataSchema>LOMv1.0</metadataSchema>
+									<metadataSchema>LREv4.7</metadataSchema>
+								</metaMetadata>
+								<classification>
+									<purpose>
+										<source>purposeValues</source>
+										<value>discipline</value>
+									</purpose>
+									<taxonPath>
+										<source>
+											<string language="x-none">LRE-0001</string>
+										</source>
+										<taxon>
+											<id>790</id>
+											<entry>
+												<string language="en">mathematics</string>
+											</entry>
+										</taxon>
+									</taxonPath>
+								</classification>
+							</lom>
+						</metadata>
+					</description>
+					<expression>
+						<dimension>
+							<name>
+								<vocabularyID>LRE.expressionDimensionNameValues</vocabularyID>
+								<value>language</value>
+							</name>
+							<parameter>
+								<vocabularyID>languageListValues</vocabularyID>
+								<value>es</value>
+							</parameter>
+						</dimension>
+						<manifestation>
+							<name>
+								<vocabularyID>LRE.manifestationNameValues</vocabularyID>
+								<value>experience</value>
+							</name>
+							<item>
+								<location>
+									<uri>http://oer.eun.org/VWClc0LcL8Ythh_gIPJ7TmuxuF3t</uri>
+								</location>
+							</item>
+						</manifestation>
+						<manifestation>
+							<name>
+								<vocabularyID>LRE.manifestationNameValues</vocabularyID>
+								<value>thumbnail</value>
+							</name>
+							<item>
+								<location>
+									<uri>http://www.geogebratube.org/files/material-22382-thumb.png</uri>
+								</location>
+							</item>
+						</manifestation>
+						<manifestation>
+							<name>
+								<vocabularyID>LRE.manifestationNameValues</vocabularyID>
+								<value>package in</value>
+							</name>
+							<parameter>
+								<vocabularyID>LRE.packageInValues</vocabularyID>
+								<value>ggb</value>
+							</parameter>
+							<item>
+								<location>
+									<uri>http://oer.eun.org/VWClc0LcL8YtgR_gIPJ7Tu8f9ChZ</uri>
+								</location>
+							</item>
+						</manifestation>
+					</expression>
+				</work>
+
+			</metadata>
+		</record>
+	</GetRecord>
+</OAI-PMH>
