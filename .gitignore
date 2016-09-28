@@ -3,3 +3,5 @@
 /lom-gr-book/book*pdf
 .project
 *.out.xml
+test_input*
+test_transformation*
