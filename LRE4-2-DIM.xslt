@@ -3,8 +3,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lom-rights="http://ltsc.ieee.org/xsd/LOM/imslode/ilox/any/rights"
-	xmlns:work="http://www.imsglobal.org/xsd/imsloilox_v1p0"
-	version="1.0">
+	xmlns:work="http://www.imsglobal.org/xsd/imsloilox_v1p0" version="1.0">
 
 	<xsl:output indent="yes" method="xml" />
 	<xsl:strip-space elements="*" />
@@ -223,6 +222,7 @@
 			</xsl:element>
 		</xsl:if>
 	</xsl:template>
+	
 
 	<!-- ********* relation-hasThumbnail ********* -->
 	<xsl:template match="work:expression/work:manifestation/work:name/work:value">
@@ -243,20 +243,13 @@
 	</xsl:template>
 
 
-
-	<!-- ********* technical-location ********* -->
-
-	<xsl:template match="lom:technical/lom:location">
-		<xsl:call-template name="addLiteralDimField">
-			<xsl:with-param name="mdschema" select="'lom'" />
-			<xsl:with-param name="element" select="'technical-location'" />
-			<xsl:with-param name="value" select="text()" />
-		</xsl:call-template>
-	</xsl:template>
-
-
-	<!-- Matching Templates -->
+	<!-- Parsing LOM Fields  -->
+	
+	<!-- ***************** ********* -->
 	<!-- ********* General ********* -->
+	<!-- ***************** ********* -->
+	
+		<!-- ********* Identifier ********* -->
 	<xsl:template match="lom:general/lom:identifier/lom:entry">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -265,6 +258,7 @@
 			<xsl:with-param name="value" select="text()" />
 		</xsl:call-template>
 	</xsl:template>
+	
 
 	<xsl:template match="lom:general/lom:title/lom:string">
 		<xsl:call-template name="addLiteralDimField">
