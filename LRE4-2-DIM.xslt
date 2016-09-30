@@ -4,7 +4,7 @@
 	xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:lom-rights="http://ltsc.ieee.org/xsd/LOM/imslode/ilox/any/rights"
 	xmlns:work="http://www.imsglobal.org/xsd/imsloilox_v1p0"
-	exclude-result-prefixes="lom lom-rights" version="1.0">
+	version="1.0">
 
 	<xsl:output indent="yes" method="xml" />
 	<xsl:strip-space elements="*" />
