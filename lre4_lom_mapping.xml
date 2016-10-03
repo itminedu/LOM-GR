@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mappings>
+
+	<!-- *********** Μαθηματικά ***************** -->
+	<mapping id='mathematics'>Μαθηματικά</mapping>
+	<mapping id='analytical geometry'>Μαθηματικά</mapping>
+	<mapping id='algebra'>Μαθηματικά</mapping>
+	<mapping id='calculus'>Μαθηματικά</mapping>
+
+
+	<!-- *********** Βιολογία********************** -->
+	<mapping id='biology'>Βιολογία</mapping>
+	<mapping id='cognitive process'>Βιολογία</mapping>
+	<mapping id='genetics'>Βιολογία</mapping>
+
+</mappings>

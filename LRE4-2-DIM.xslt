@@ -441,7 +441,8 @@
 
 			</xsl:if>
 
-			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute is used in the output -->
+			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute 
+				is used in the output -->
 			<xsl:if
 				test="contains(descendant::*[name()='value'], 'scientific metadata coordinator')">
 
@@ -746,11 +747,14 @@
 		<!-- ********* Classification.Taxonpath ********* -->
 		<xsl:if test="lom:purpose/lom:value[contains(text(), 'discipline')]">
 			<xsl:if test="normalize-space(.)">
-				<xsl:variable name="hasDisciplinceValue" select="descendant::*[name()='entry']" />
+				<xsl:variable name="hasDisciplinceValue" select="descendant::*[name()='entry']" /> 
+				<xsl:variable name="taxonMappedValue">
+					<xsl:value-of select="document('lre4_lom_mapping.xml')//string[@id=$hasDisciplinceValue]" />
+				</xsl:variable>
 				<xsl:call-template name="addLiteralDimField">
 					<xsl:with-param name="mdschema" select="'lom'" />
 					<xsl:with-param name="element" select="'classification-taxonpath'" />
-					<xsl:with-param name="value" select="$hasDisciplinceValue" />
+					<xsl:with-param name="value" select="$taxonMappedValue" />
 				</xsl:call-template>
 			</xsl:if>
 			<xsl:if test="normalize-space(.)">
@@ -772,93 +776,93 @@
 			</xsl:if>
 		</xsl:if>
 	</xsl:template>
-	
-	
-	
-		<!-- ******************************* -->
-		<!-- ********* Lifecycle ********* -->
-		<!-- ******************************* -->
 
-		<xsl:template match="lom:lifeCycle/lom:contribute">
-			<xsl:if test="normalize-space(.)">
-				<xsl:variable name="lifecycleContributeEntityValue"
-					select="substring-before(substring-after(descendant::*[name()='entity'],'FN:'),' N:')" />
 
-				<xsl:if
-					test="(not(contains(descendant::*[name()='value'], 'funder'))) and (not(contains(descendant::*[name()='value'], 'certifier'))) and
+
+	<!-- ******************************* -->
+	<!-- ********* Lifecycle ********* -->
+	<!-- ******************************* -->
+
+	<xsl:template match="lom:lifeCycle/lom:contribute">
+		<xsl:if test="normalize-space(.)">
+			<xsl:variable name="lifecycleContributeEntityValue"
+				select="substring-before(substring-after(descendant::*[name()='entity'],'FN:'),' N:')" />
+
+			<xsl:if
+				test="(not(contains(descendant::*[name()='value'], 'funder'))) and (not(contains(descendant::*[name()='value'], 'certifier'))) and
                		(not(contains(descendant::*[name()='value'], 'distributor'))) and (not(contains(descendant::*[name()='value'], 'provider'))) and
                 	(not(contains(descendant::*[name()='value'], 'data provider'))) and (not(contains(descendant::*[name()='value'], 'uploader')))">
 
 
-					<!-- ********* Lifecycle.Contribute.Entity ********* -->
-					<xsl:if test="descendant::*[name()='entity']">
-						<xsl:call-template name="addLiteralDimField">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element"
-								select="'lifecycle-contribute-entity'" />
-							<xsl:with-param name="value"
-								select="$lifecycleContributeEntityValue" />
-						</xsl:call-template>
-					</xsl:if>
-					<xsl:if test="not(descendant::*[name()='entity'])">
-						<xsl:call-template name="addLiteralDimField">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element"
-								select="'lifecycle-contribute-entity'" />
-							<xsl:with-param name="value">
-								none
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:if>
+				<!-- ********* Lifecycle.Contribute.Entity ********* -->
+				<xsl:if test="descendant::*[name()='entity']">
+					<xsl:call-template name="addLiteralDimField">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element"
+							select="'lifecycle-contribute-entity'" />
+						<xsl:with-param name="value"
+							select="$lifecycleContributeEntityValue" />
+					</xsl:call-template>
+				</xsl:if>
+				<xsl:if test="not(descendant::*[name()='entity'])">
+					<xsl:call-template name="addLiteralDimField">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element"
+							select="'lifecycle-contribute-entity'" />
+						<xsl:with-param name="value">
+							none
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:if>
 
 
-					<!-- ********* Lifecycle.Contribute.Role ********* -->
-					<xsl:variable name="lifecycleContributeRoleValue"
-						select="descendant::*[name()='value']" />
-					<xsl:if test="descendant::*[name()='value']">
-						<xsl:call-template name="addLiteralDimField">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
-							<xsl:with-param name="value"
-								select="$lifecycleContributeRoleValue" />
-						</xsl:call-template>
-					</xsl:if>
-					<xsl:if test="not(descendant::*[name()='value'])">
-						<xsl:call-template name="addLiteralDimField">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
-							<xsl:with-param name="value">
-								none
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:if>
+				<!-- ********* Lifecycle.Contribute.Role ********* -->
+				<xsl:variable name="lifecycleContributeRoleValue"
+					select="descendant::*[name()='value']" />
+				<xsl:if test="descendant::*[name()='value']">
+					<xsl:call-template name="addLiteralDimField">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
+						<xsl:with-param name="value"
+							select="$lifecycleContributeRoleValue" />
+					</xsl:call-template>
+				</xsl:if>
+				<xsl:if test="not(descendant::*[name()='value'])">
+					<xsl:call-template name="addLiteralDimField">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
+						<xsl:with-param name="value">
+							none
+						</xsl:with-param>
+					</xsl:call-template>
+				</xsl:if>
 
 
-					<!-- ********* Lifecycle.Contribute.Date ********* -->
-					<xsl:variable name="lifecycleContributeDateValue"
-						select="descendant::*[name()='dateTime']" />
-					<xsl:if test="descendant::*[name()='dateTime']">
-						<xsl:call-template name="formatDate">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
-							<xsl:with-param name="value"
-								select="$lifecycleContributeDateValue" />
-						</xsl:call-template>
-					</xsl:if>
-					<xsl:if test="not(descendant::*[name()='dateTime'])">
-						<xsl:call-template name="formatDate">
-							<xsl:with-param name="mdschema" select="'lom'" />
-							<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
-							<xsl:with-param name="value">
-								none
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:if>
-
+				<!-- ********* Lifecycle.Contribute.Date ********* -->
+				<xsl:variable name="lifecycleContributeDateValue"
+					select="descendant::*[name()='dateTime']" />
+				<xsl:if test="descendant::*[name()='dateTime']">
+					<xsl:call-template name="formatDate">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
+						<xsl:with-param name="value"
+							select="$lifecycleContributeDateValue" />
+					</xsl:call-template>
+				</xsl:if>
+				<xsl:if test="not(descendant::*[name()='dateTime'])">
+					<xsl:call-template name="formatDate">
+						<xsl:with-param name="mdschema" select="'lom'" />
+						<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
+						<xsl:with-param name="value">
+							none
+						</xsl:with-param>
+					</xsl:call-template>
 				</xsl:if>
 
 			</xsl:if>
-		</xsl:template>
+
+		</xsl:if>
+	</xsl:template>
 
 
 
