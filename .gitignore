@@ -5,3 +5,5 @@
 *.out.xml
 test_input*
 test_transformation*
+input.xml
+transformation.xsl

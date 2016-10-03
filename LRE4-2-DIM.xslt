@@ -11,13 +11,13 @@
 		<xsl:text />
 	</xsl:variable>
 
-	<!-- **** /GLOBAL, DATA-DETERMINED VARIABLES *** -->
 	<xsl:template match="text()">
 		<!-- Do nothing. (That is, override the built-in rule (which would print 
 			out any otherwise not handled text), and suppress any otherwise not handled 
 			text) -->
 	</xsl:template>
 
+	<!-- **** Variable declarations *** -->
 	<xsl:param name="delim" select="','" />
 	<xsl:param name="quote">
 		"
@@ -56,8 +56,13 @@
 		</xsl:element>
 	</xsl:template>
 
-	<!-- Helpers -->
-	<!-- Adds Literal fields as simple strings -->
+
+
+	<!-- ******************************* -->
+	<!-- ********* Temlates ************ -->
+	<!-- ******************************* -->
+
+	<!-- Add literal dim field -->
 	<xsl:template name="addLiteralDimField">
 		<xsl:param name="mdschema" />
 		<xsl:param name="element" />
@@ -82,6 +87,7 @@
 			</xsl:element>
 		</xsl:if>
 	</xsl:template>
+
 
 	<!-- Adds Literal fields including qualifier as simple strings -->
 	<xsl:template name="addLiteralDimFieldInclQualifier">
@@ -112,6 +118,7 @@
 			</xsl:element>
 		</xsl:if>
 	</xsl:template>
+
 
 	<!-- Format language, which is by reference 1 or 2 or... -->
 	<xsl:template name="formatLanguage">
@@ -150,6 +157,7 @@
 		</xsl:if>
 	</xsl:template>
 
+	<!-- Format Duration -->
 	<xsl:template name="formatDuration">
 		<xsl:param name="mdschema" />
 		<xsl:param name="element" />
@@ -222,9 +230,15 @@
 			</xsl:element>
 		</xsl:if>
 	</xsl:template>
-	
 
-	<!-- ********* relation-hasThumbnail ********* -->
+
+	<!-- ******************************* -->
+	<!-- ********* Thumbnail ********* -->
+	<!-- ******************************* -->
+
+	<!-- Thumbnail is taken for the time being from the first manifestation 
+		instance ! -->
+	<!-- Thumbnail(s) is/are not part of LOM schema for LRE -->
 	<xsl:template match="work:expression/work:manifestation/work:name/work:value">
 		<xsl:if test="normalize-space(.)">
 			<xsl:variable name="theValue">
@@ -243,14 +257,16 @@
 	</xsl:template>
 
 
-	<!-- Parsing LOM Fields  -->
-	
+
+	<!-- ********* Parsing LOM Fields ************ -->
+
+
 	<!-- ***************** ********* -->
 	<!-- ********* General ********* -->
 	<!-- ***************** ********* -->
-	
-		<!-- ********* Identifier ********* -->
-	<xsl:template match="lom:general/lom:identifier/lom:entry">
+
+	<!-- *********General. Identifier ********* -->
+	<xsl:template match="work:identifier/work:entry">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
 			<xsl:with-param name="element" select="'general-identifier'" />
@@ -258,8 +274,9 @@
 			<xsl:with-param name="value" select="text()" />
 		</xsl:call-template>
 	</xsl:template>
-	
 
+
+	<!-- ********* General.Title ********* -->
 	<xsl:template match="lom:general/lom:title/lom:string">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -269,7 +286,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
-	<!-- Vocabulary -->
+
+	<!-- ********* General.Language ********* -->
 	<xsl:template match="lom:general/lom:language">
 		<xsl:call-template name="formatLanguage">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -278,24 +296,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
-	<xsl:template match="lom:general/lom:description/lom:string">
-		<xsl:call-template name="addLiteralDimField">
-			<xsl:with-param name="mdschema" select="'lom'" />
-			<xsl:with-param name="element" select="'general-description'" />
-			<xsl:with-param name="lang" select="@language" />
-			<xsl:with-param name="value" select="text()" />
-		</xsl:call-template>
-	</xsl:template>
 
-	<xsl:template match="lom:general/lom:keyword/lom:string">
-		<xsl:call-template name="addLiteralDimField">
-			<xsl:with-param name="mdschema" select="'lom'" />
-			<xsl:with-param name="element" select="'general-keyword'" />
-			<xsl:with-param name="lang" select="@language" />
-			<xsl:with-param name="value" select="text()" />
-		</xsl:call-template>
-	</xsl:template>
-
+	<!-- ********* General.Coverage ********* -->
 	<xsl:template match="lom:general/lom:coverage/lom:string">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -305,18 +307,36 @@
 		</xsl:call-template>
 	</xsl:template>
 
-	<!-- Vocabulary -->
-	<xsl:template match="lom:general/lom:aggregationLevel/lom:string">
+
+	<!-- ********* General.Description ********* -->
+	<xsl:template match="lom:general/lom:description/lom:string">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
-			<xsl:with-param name="element" select="'general-aggregationLevel'" />
+			<xsl:with-param name="element" select="'general-description'" />
 			<xsl:with-param name="lang" select="@language" />
 			<xsl:with-param name="value" select="text()" />
 		</xsl:call-template>
 	</xsl:template>
 
-	<!-- ********* MetaMetadata ********* -->
 
+	<!-- ********* General.Keyword(s) ********* -->
+	<xsl:template match="lom:general/lom:keyword/lom:string">
+		<xsl:call-template name="addLiteralDimField">
+			<xsl:with-param name="mdschema" select="'lom'" />
+			<xsl:with-param name="element" select="'general-keyword'" />
+			<xsl:with-param name="lang" select="@language" />
+			<xsl:with-param name="value" select="text()" />
+		</xsl:call-template>
+	</xsl:template>
+
+
+
+
+	<!-- ********************************** -->
+	<!-- ********* Metametadata ********* -->
+	<!-- ********************************** -->
+
+	<!-- For anything EXCEPT scientific coordinator -->
 	<xsl:template match="lom:metaMetadata/lom:contribute">
 		<xsl:if test="normalize-space(.)">
 			<xsl:variable name="metametadataContributeEntityValue"
@@ -325,7 +345,8 @@
 			<xsl:if
 				test="(not(contains(descendant::*[name()='value'], 'scientific metadata coordinator')))">
 
-				<!-- metametadata-contribute-entity -->
+
+				<!-- ********* Metametadata.Contribute.Entity ********* -->
 				<xsl:if test="descendant::*[name()='entity']">
 					<xsl:call-template name="addLiteralDimField">
 						<xsl:with-param name="mdschema" select="'lom'" />
@@ -346,7 +367,8 @@
 					</xsl:call-template>
 				</xsl:if>
 
-				<!-- metametadata-contribute-role -->
+
+				<!-- ********* Metametadata.Contribute.Role ********* -->
 				<xsl:variable name="metametadataContributeRoleValue"
 					select="descendant::*[name()='value']" />
 				<xsl:if test="descendant::*[name()='value']">
@@ -393,7 +415,8 @@
 					</xsl:call-template>
 				</xsl:if>
 
-				<!-- metametadata-contribute-date -->
+
+				<!-- ********* Metametadata.Contribute.Date ********* -->
 				<xsl:variable name="metametadataContributeDateValue"
 					select="descendant::*[name()='dateTime']" />
 				<xsl:if test="descendant::*[name()='dateTime']">
@@ -418,11 +441,11 @@
 
 			</xsl:if>
 
-			<!-- scientific metadata coordinator -->
+			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute is used in the output -->
 			<xsl:if
 				test="contains(descendant::*[name()='value'], 'scientific metadata coordinator')">
 
-				<!-- metametadata-contribute-entity -->
+				<!-- ********* Metametadata.Contribute.Entity ********* -->
 				<xsl:if test="descendant::*[name()='entity']">
 					<xsl:call-template name="addLiteralDimField">
 						<xsl:with-param name="mdschema" select="'lom'" />
@@ -443,7 +466,8 @@
 					</xsl:call-template>
 				</xsl:if>
 
-				<!-- metametadata-contribute-role -->
+
+				<!-- ********* Metametadata.Contribute.Role ********* -->
 				<xsl:variable name="metametadataContributeRoleValue"
 					select="descendant::*[name()='value']" />
 				<xsl:if test="descendant::*[name()='value']">
@@ -464,7 +488,8 @@
 					</xsl:call-template>
 				</xsl:if>
 
-				<!-- metametadata-contribute-date -->
+
+				<!-- ********* Metametadata.Contribute.Date ********* -->
 				<xsl:variable name="metametadataContributeDateValue"
 					select="descendant::*[name()='dateTime']" />
 				<xsl:if test="descendant::*[name()='dateTime']">
@@ -490,16 +515,8 @@
 		</xsl:if>
 	</xsl:template>
 
-	<xsl:template match="lom:metaMetadata/lom:language">
-		<xsl:call-template name="addLiteralDimField">
-			<xsl:with-param name="mdschema" select="'lom'" />
-			<xsl:with-param name="element" select="'metaMetadata-language'" />
-			<xsl:with-param name="lang" select="@language" />
-			<xsl:with-param name="value" select="text()" />
-		</xsl:call-template>
-	</xsl:template>
-
-	<xsl:template match="lom:metaMetadata/lom:metaSchema">
+	<!-- ********* Metametadata.Schema ********* -->
+	<xsl:template match="lom:metaMetadata/lom:metadataSchema">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
 			<xsl:with-param name="element" select="'metaMetadata-metaSchema'" />
@@ -509,8 +526,12 @@
 	</xsl:template>
 
 
-	<!-- ********* Educational ********* -->
 
+	<!-- ******************************* -->
+	<!-- ********* Educational ********* -->
+	<!-- ******************************* -->
+
+	<!-- ********* Educational.Description ********* -->
 	<xsl:template match="lom:educational/lom:description/lom:string">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -520,6 +541,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Educational.InteractivityType ********* -->
 	<xsl:template match="lom:educational/lom:interactivityType/lom:value">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -528,6 +551,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Educational.LearningResourceType ********* -->
 	<xsl:template match="lom:educational/lom:learningResourceType/lom:value">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -537,6 +562,7 @@
 		</xsl:call-template>
 	</xsl:template>
 
+	<!-- ********* Educational.IntendedEndUserRole ********* -->
 	<xsl:template match="lom:educational/lom:intendedEndUserRole/lom:value">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -545,6 +571,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Educational.Context ********* -->
 	<xsl:template match="lom:educational/lom:context/lom:value">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -553,6 +581,7 @@
 		</xsl:call-template>
 	</xsl:template>
 
+	<!-- ********* Educational.TypicalAgeRange ********* -->
 	<xsl:template match="lom:educational/lom:typicalAgeRange/lom:string">
 		<xsl:call-template name="addLiteralDimField">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -562,6 +591,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Educational.TypicalLearningTime ********* -->
 	<xsl:template match="lom:educational/lom:typicalLearningTime/lom:duration">
 		<xsl:call-template name="formatDuration">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -571,6 +602,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Educational.Language ********* -->
 	<xsl:template match="lom:educational/lom:language">
 		<xsl:call-template name="formatLanguage">
 			<xsl:with-param name="mdschema" select="'lom'" />
@@ -579,8 +612,13 @@
 		</xsl:call-template>
 	</xsl:template>
 
-	<!-- ********* Rights ********* -->
 
+
+	<!-- ************************* -->
+	<!-- ********* Rights********* -->
+	<!-- ************************* -->
+
+	<!-- ********* Rights.Description ********* -->
 	<xsl:template
 		match="lom-rights:rights/lom-rights:description/lom-rights:string">
 		<xsl:call-template name="addLiteralDimField">
@@ -591,6 +629,8 @@
 		</xsl:call-template>
 	</xsl:template>
 
+
+	<!-- ********* Rights.Cost ********* -->
 	<xsl:template match="lom-rights:rights/lom-rights:cost/lom-rights:value">
 		<xsl:if test="contains(text(),'no')">
 			<xsl:call-template name="addLiteralDimField">
@@ -660,6 +700,8 @@
 		</xsl:if>
 	</xsl:template>
 
+
+	<!-- ********* Rights.CopyrightAndOtherRestrictions ********* -->
 	<xsl:template
 		match="lom-rights:rights/lom-rights:copyrightAndOtherRestrictions/lom-rights:value">
 		<xsl:if test="contains(text(),'no')">
@@ -694,11 +736,14 @@
 		</xsl:if>
 	</xsl:template>
 
+
+	<!-- ******************************* -->
 	<!-- ********* Classification ********* -->
+	<!-- ******************************* -->
 
 	<xsl:template match="lom:classification">
 
-		<!-- classification-taxonpath -->
+		<!-- ********* Classification.Taxonpath ********* -->
 		<xsl:if test="lom:purpose/lom:value[contains(text(), 'discipline')]">
 			<xsl:if test="normalize-space(.)">
 				<xsl:variable name="hasDisciplinceValue" select="descendant::*[name()='entry']" />
@@ -726,7 +771,96 @@
 				</xsl:call-template>
 			</xsl:if>
 		</xsl:if>
-
 	</xsl:template>
+	
+	
+	
+		<!-- ******************************* -->
+		<!-- ********* Lifecycle ********* -->
+		<!-- ******************************* -->
+
+		<xsl:template match="lom:lifeCycle/lom:contribute">
+			<xsl:if test="normalize-space(.)">
+				<xsl:variable name="lifecycleContributeEntityValue"
+					select="substring-before(substring-after(descendant::*[name()='entity'],'FN:'),' N:')" />
+
+				<xsl:if
+					test="(not(contains(descendant::*[name()='value'], 'funder'))) and (not(contains(descendant::*[name()='value'], 'certifier'))) and
+               		(not(contains(descendant::*[name()='value'], 'distributor'))) and (not(contains(descendant::*[name()='value'], 'provider'))) and
+                	(not(contains(descendant::*[name()='value'], 'data provider'))) and (not(contains(descendant::*[name()='value'], 'uploader')))">
+
+
+					<!-- ********* Lifecycle.Contribute.Entity ********* -->
+					<xsl:if test="descendant::*[name()='entity']">
+						<xsl:call-template name="addLiteralDimField">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element"
+								select="'lifecycle-contribute-entity'" />
+							<xsl:with-param name="value"
+								select="$lifecycleContributeEntityValue" />
+						</xsl:call-template>
+					</xsl:if>
+					<xsl:if test="not(descendant::*[name()='entity'])">
+						<xsl:call-template name="addLiteralDimField">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element"
+								select="'lifecycle-contribute-entity'" />
+							<xsl:with-param name="value">
+								none
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:if>
+
+
+					<!-- ********* Lifecycle.Contribute.Role ********* -->
+					<xsl:variable name="lifecycleContributeRoleValue"
+						select="descendant::*[name()='value']" />
+					<xsl:if test="descendant::*[name()='value']">
+						<xsl:call-template name="addLiteralDimField">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
+							<xsl:with-param name="value"
+								select="$lifecycleContributeRoleValue" />
+						</xsl:call-template>
+					</xsl:if>
+					<xsl:if test="not(descendant::*[name()='value'])">
+						<xsl:call-template name="addLiteralDimField">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element" select="'lifecycle-contribute-role'" />
+							<xsl:with-param name="value">
+								none
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:if>
+
+
+					<!-- ********* Lifecycle.Contribute.Date ********* -->
+					<xsl:variable name="lifecycleContributeDateValue"
+						select="descendant::*[name()='dateTime']" />
+					<xsl:if test="descendant::*[name()='dateTime']">
+						<xsl:call-template name="formatDate">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
+							<xsl:with-param name="value"
+								select="$lifecycleContributeDateValue" />
+						</xsl:call-template>
+					</xsl:if>
+					<xsl:if test="not(descendant::*[name()='dateTime'])">
+						<xsl:call-template name="formatDate">
+							<xsl:with-param name="mdschema" select="'lom'" />
+							<xsl:with-param name="element" select="'lifecycle-contribute-date'" />
+							<xsl:with-param name="value">
+								none
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:if>
+
+				</xsl:if>
+
+			</xsl:if>
+		</xsl:template>
+
+
+
 
 </xsl:stylesheet>
