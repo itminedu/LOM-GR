@@ -12,8 +12,8 @@
 	</xsl:variable>
 
 	<xsl:template match="text()">
-		<!-- Do nothing. (That is, override the built-in rule (which would print 
-			out any otherwise not handled text), and suppress any otherwise not handled 
+		<!-- Do nothing. (That is, override the built-in rule (which would print
+			out any otherwise not handled text), and suppress any otherwise not handled
 			text) -->
 	</xsl:template>
 
@@ -236,7 +236,7 @@
 	<!-- ********* Thumbnail ********* -->
 	<!-- ******************************* -->
 
-	<!-- Thumbnail is taken for the time being from the first manifestation 
+	<!-- Thumbnail is taken for the time being from the first manifestation
 		instance ! -->
 	<!-- Thumbnail(s) is/are not part of LOM schema for LRE -->
 	<xsl:template match="work:expression/work:manifestation/work:name/work:value">
@@ -441,7 +441,7 @@
 
 			</xsl:if>
 
-			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute 
+			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute
 				is used in the output -->
 			<xsl:if
 				test="contains(descendant::*[name()='value'], 'scientific metadata coordinator')">
@@ -747,9 +747,9 @@
 		<!-- ********* Classification.Taxonpath ********* -->
 		<xsl:if test="lom:purpose/lom:value[contains(text(), 'discipline')]">
 			<xsl:if test="normalize-space(.)">
-				<xsl:variable name="hasDisciplinceValue" select="descendant::*[name()='entry']" /> 
+				<xsl:variable name="hasDisciplineValue" select="descendant::*[name()='entry']" />
 				<xsl:variable name="taxonMappedValue">
-					<xsl:value-of select="document('lre4_lom_mapping.xml')//string[@id=$hasDisciplinceValue]" />
+					<xsl:value-of select="document('lre4_lom_mapping.xml')//mapping[@id=$hasDisciplineValue]" />
 				</xsl:variable>
 				<xsl:call-template name="addLiteralDimField">
 					<xsl:with-param name="mdschema" select="'lom'" />
@@ -758,11 +758,11 @@
 				</xsl:call-template>
 			</xsl:if>
 			<xsl:if test="normalize-space(.)">
-				<xsl:variable name="hasDisciplinceKValue" select="descendant::*[name()='keyword']" />
+				<xsl:variable name="hasDisciplineKValue" select="descendant::*[name()='keyword']" />
 				<xsl:call-template name="addLiteralDimField">
 					<xsl:with-param name="mdschema" select="'lom'" />
 					<xsl:with-param name="element" select="'classification-keyword'" />
-					<xsl:with-param name="value" select="$hasDisciplinceKValue" />
+					<xsl:with-param name="value" select="$hasDisciplineKValue" />
 				</xsl:call-template>
 			</xsl:if>
 			<xsl:if test="normalize-space(.)">
