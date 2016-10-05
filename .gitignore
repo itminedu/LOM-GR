@@ -7,3 +7,6 @@ test_input*
 test_transformation*
 input.xml
 transformation.xsl
+LOM-2-DIM.xslt
+lom-photodentro-sample.xml
+

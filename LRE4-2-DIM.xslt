@@ -12,8 +12,8 @@
 	</xsl:variable>
 
 	<xsl:template match="text()">
-		<!-- Do nothing. (That is, override the built-in rule (which would print
-			out any otherwise not handled text), and suppress any otherwise not handled
+		<!-- Do nothing. (That is, override the built-in rule (which would print 
+			out any otherwise not handled text), and suppress any otherwise not handled 
 			text) -->
 	</xsl:template>
 
@@ -232,18 +232,18 @@
 	</xsl:template>
 
 
-	<!-- ******************************* -->
-	<!-- ********* Thumbnail ********* -->
-	<!-- ******************************* -->
+	<!-- ************************************************** -->
+	<!-- ********** Parsing non-LOM elements ************* -->
+	<!-- ************************************************** -->
 
-	<!-- Thumbnail is taken for the time being from the first manifestation
-		instance ! -->
-	<!-- Thumbnail(s) is/are not part of LOM schema for LRE -->
+	<!-- These values are taken for the time being from the first manifestation instance ! -->
+	<!-- They are not part of LOM schema for LRE -->
 	<xsl:template match="work:expression/work:manifestation/work:name/work:value">
 		<xsl:if test="normalize-space(.)">
 			<xsl:variable name="theValue">
 				<xsl:value-of select="text()" />
 			</xsl:variable>
+			<!-- ****** Relation.hasThumbnail *********-->
 			<xsl:if test="contains($theValue, 'thumbnail')">
 				<xsl:variable name="hasThumbnailValue"
 					select="ancestor::*[1]/ancestor::*[1]/child::*[2]" />
@@ -253,8 +253,39 @@
 					<xsl:with-param name="value" select="$hasThumbnailValue" />
 				</xsl:call-template>
 			</xsl:if>
+			<!-- ******** Relation.isShownAt  *********-->
+			<xsl:if test="contains($theValue, 'experience')">
+				<xsl:variable name="shownAt"
+					select="ancestor::*[1]/ancestor::*[1]/child::*[2]" />
+				<xsl:call-template name="addLiteralDimField">
+					<xsl:with-param name="mdschema" select="'lom'" />
+					<xsl:with-param name="element" select="'relation-isShownAt'" />
+					<xsl:with-param name="value" select="$shownAt" />
+				</xsl:call-template>
+			</xsl:if>
+			<!-- ******** Technical.Location ********** -->
+			<xsl:if test="contains($theValue, 'package in')">
+				<xsl:variable name="location"
+					select="ancestor::*[1]/ancestor::*[1]/child::*[3]" />
+				<xsl:call-template name="addLiteralDimField">
+					<xsl:with-param name="mdschema" select="'lom'" />
+					<xsl:with-param name="element" select="'technical-location'" />
+					<xsl:with-param name="value" select="$location" />
+				</xsl:call-template>
+			</xsl:if>
+			<!-- ******** Technical.Format ********** -->
+<!-- 			<xsl:if test="contains($theValue, 'package in')">
+				<xsl:variable name="format"
+					select="ancestor::*[1]/ancestor::*[1]/child::*[2]" />
+				<xsl:call-template name="addLiteralDimField">
+					<xsl:with-param name="mdschema" select="'lom'" />
+					<xsl:with-param name="element" select="'technical-format'" />
+					<xsl:with-param name="value" select="$format" />
+				</xsl:call-template>
+			</xsl:if> -->
 		</xsl:if>
 	</xsl:template>
+
 
 
 
@@ -441,7 +472,7 @@
 
 			</xsl:if>
 
-			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute
+			<!-- For scientific coordinator: apparently in this case the Lifecycle.Contribute 
 				is used in the output -->
 			<xsl:if
 				test="contains(descendant::*[name()='value'], 'scientific metadata coordinator')">
@@ -749,7 +780,8 @@
 			<xsl:if test="normalize-space(.)">
 				<xsl:variable name="hasDisciplineValue" select="descendant::*[name()='entry']" />
 				<xsl:variable name="taxonMappedValue">
-					<xsl:value-of select="document('lre4_lom_mapping.xml')//mapping[@id=$hasDisciplineValue]" />
+					<xsl:value-of
+						select="document('lre4_lom_mapping.xml')//mapping[@id=$hasDisciplineValue]" />
 				</xsl:variable>
 				<xsl:call-template name="addLiteralDimField">
 					<xsl:with-param name="mdschema" select="'lom'" />
@@ -863,8 +895,5 @@
 
 		</xsl:if>
 	</xsl:template>
-
-
-
 
 </xsl:stylesheet>
