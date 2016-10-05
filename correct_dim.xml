@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dim:dim xmlns:dim="http://www.dspace.org/xmlns/dspace/dim"><!--IMPORTANT NOTE:
+				***************************************************************************************
+				THIS "Dspace Intermediate Metadata" ('DIM') IS **NOT** TO BE USED FOR
+				INTERCHANGE WITH OTHER SYSTEMS.
+				***************************************************************************************
+				It does NOT pretend to be a standard, interoperable representation of Dublin
+				Core. It is EXPRESSLY used for transformation to and from source metadata XML
+				vocabularies into and out of the DSpace object model. See
+				http://wiki.dspace.org/DspaceIntermediateMetadata For more on Dublin Core
+				standard schemata, see:
+				http://dublincore.org/schemas/xmls/qdc/2003/04/02/qualifieddc.xsd
+				http://dublincore.org/schemas/xmls/qdc/2003/04/02/dcterms.xsd Dublin Core
+				usage guide: http://dublincore.org/documents/usageguide/ Also:
+				http://dublincore.org/documents/dc-rdf/--><dim:field mdschema="lom" element="general-title" lang="el">Αριστοτέλης Βαλαωρίτης, «Φωτεινός»</dim:field>
+    <dim:field mdschema="lom" element="general-description" lang="el">Αποσπάσματα από το εκτενές ποιητικό σύνθεμα «Φωτεινός», το οποίο έμεινε ανολοκλήρωτο. Στο ποίημα αναπλάθεται ένα επεισόδιο της μεσαιωνικής ιστορίας της φραγκοκρατούμενης Λευκάδας: ο ηλικιωμένος απόμαχος οπλαρχηγός Φωτεινός τιμωρείται προσβλητικά επειδή τόλμησε να πετροβολήσει τα σκυλιά του Φράγκου αφέντη, που του χαλούσαν τα σπαρτά. Αγανακτισμένος ο γέροντας καταφεύγει στο βουνό, προκειμένου να οργανώσει επανάσταση και να εκδικηθεί τον ξένο δυνάστη. Περιλαμβάνεται στον τόμο «Ποιήματα και Πεζά» (τόμ. Β΄) σε φιλολογική επιμέλεια Γ.Π. Σαββίδη και Ελ. Τσαντσάνογλου.</dim:field>
+    <dim:field mdschema="lom" element="general-language">1</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">άτομο-κοινωνία</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">αγωνιστικό πνεύμα</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">στάσεις ζωής</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">φύση</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">δεκαπεντασύλλαβος</dim:field>
+    <dim:field mdschema="lom" element="general-keyword" lang="el">ποίηση παραδοσιακή</dim:field>
+    <dim:field mdschema="lom" element="general-identifier">photodentro:lor:8521/10366</dim:field>
+    <dim:field mdschema="lom" element="lifecycle-contribute-role">none</dim:field>
+    <dim:field mdschema="lom" element="lifecycle-contribute-date">//none</dim:field>
+    <dim:field mdschema="lom" element="metaMetadata-identifier">photodentro:lor:8521/10366</dim:field>
+    <dim:field mdschema="lom" element="metametadata-contribute-role">Δημιουργός</dim:field>
+    <dim:field mdschema="lom" element="metametadata-contribute-date">26/09/2016</dim:field>
+    <dim:field mdschema="lom" element="metametadata-contribute-role">Επικυρωτής</dim:field>
+    <dim:field mdschema="lom" element="metametadata-contribute-date">26/09/2016</dim:field>
+    <dim:field mdschema="lom" element="metaMetadata-language">el</dim:field>
+    <dim:field mdschema="lom" element="technical-location">http://photodentro.edu.gr/lor/retrieve/52095/valaoritis_ar1_pidx0051799.zip</dim:field>
+    <dim:field mdschema="lom" element="technical-format">application/zip</dim:field>
+    <dim:field mdschema="lom" element="technical-size">293783</dim:field>
+    <dim:field mdschema="lom" element="educational-learningresourcetype">text</dim:field>
+    <dim:field mdschema="lom" element="educational-context">higher secondary</dim:field>
+    <dim:field mdschema="lom" element="educational-typicalagerange" lang="en">15-18</dim:field>
+    <dim:field mdschema="lom" element="rights-description" lang="el">Το παρόν Μαθησιακό Αντικείμενο χορηγείται με άδεια 'Creative Commons Attribution-NonCommercial-NonDerivs Greece 3.0'. Δηλαδή, αυτό διατίθεται για ελεύθερη χρήση, αναπαραγωγή, αναδιανομή, παρουσίαση και αξιοποίηση, με την προϋπόθεση να μην υπάρχει πρόθεση εμπορικής εκμετάλλευσης. Απαιτείται αναφορά του δημιουργού ή του δικαιούχου της άδειας. Δεν επιτρέπεται η διασκευή, τροποποίηση ή με άλλο τρόπο δημιουργία παράγωγου έργου.::Το παρόν κείμενο αποτελεί μέρος του ψηφιακού εμπλουτισμού των σχολικών ανθολογίων λογοτεχνίας Γυμνασίου και Λυκείου που δημιουργήθηκε στο πλαίσιο του Ψηφιακού Σχολείου και συγκεκριμένα του έργου «Διαμόρφωση Μεθοδολογίας Ψηφιακής Διαμόρφωσης των σχολικών βιβλίων και έντυπου εκπαιδευτικού υλικού για τα Γλωσσικά μαθήματα, Ψηφιακή Διαμόρφωση των σχολικών βιβλίων για τα Γλωσσικά μαθήματα, Αναζήτηση και Προσαρμογή πρόσθετου Εκπαιδευτικού υλικού για τα μαθήματα της Ελληνικής Γλώσσας», του Ε.Π. «Εκπαίδευση και Διά Βίου Μάθηση» του Υπουργείου Παιδείας και Θρησκευμάτων (Υ.ΠΑΙ.Θ.), το οποίο συγχρηματοδοτείται από την Ευρωπαϊκή Ένωση (Ευρωπαϊκό Κοινωνικό Ταμείο) και το Ελληνικό Δημόσιο στο πλαίσιο του ΕΣΠΑ και υλοποιείται από το Κέντρο Ελληνικής Γλώσσας (ΚΕΓ).</dim:field>
+    <dim:field mdschema="lom" element="rights-cc-remix">false</dim:field>
+    <dim:field mdschema="lom" element="rights-cc-noncommercial">true</dim:field>
+    <dim:field mdschema="lom" element="rights-cc-kind">sure</dim:field>
+    <dim:field mdschema="lom" element="rights-cc">Creative Commons Attribution-NonCommercial-ShareAlike Greece 3.0</dim:field>
+    <dim:field mdschema="lom" element="rights-cc-url">http://creativecommons.org/licenses/by-nc-sa/3.0/</dim:field>
+    <dim:field mdschema="lom" element="licence-title">http://creativecommons.org/licenses/by-nc-sa/3.0/</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Θέματα::Άνθρωπος - Ανθρώπινες σχέσεις και αξίες</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Θέματα::Ιστορία</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Λογοτεχνικά γένη και είδη::Ποίηση</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Τεχνικές / Τρόποι γραφής::Μέτρο - Στιχουργία</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Ρεύματα / Κινήματα::Ρομαντισμός</dim:field>
+    <dim:field mdschema="lom" element="classification-taxonpath">Νεοελληνική Λογοτεχνία::Γραμματολογικές περίοδοι - Γενιές / Σχολές::Επτανησιακή Σχολή</dim:field>
+    <dim:field mdschema="lom" element="relation-isShownAt">http://photodentro.edu.gr/lor/r/8521/10366</dim:field>
+    <dim:field mdschema="lom" element="relation-hasThumbnail">http://photodentro.edu.gr/lor/retrieve/52092/valaoritis_ar1.zip.jpg</dim:field>
+</dim:dim>
