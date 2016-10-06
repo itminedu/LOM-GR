@@ -274,19 +274,19 @@
 				</xsl:call-template>
 			</xsl:if>
 			<!-- ******** Technical.Format ********** -->
-<!-- 			<xsl:if test="contains($theValue, 'package in')">
-				<xsl:variable name="format"
+			<xsl:if test="contains($theValue, 'package in')">
+				<xsl:variable name="mergedvalue"
 					select="ancestor::*[1]/ancestor::*[1]/child::*[2]" />
+					<xsl:variable name="format"
+				select="substring-after($mergedvalue, 'LRE.packageInValues')" />
 				<xsl:call-template name="addLiteralDimField">
 					<xsl:with-param name="mdschema" select="'lom'" />
 					<xsl:with-param name="element" select="'technical-format'" />
 					<xsl:with-param name="value" select="$format" />
 				</xsl:call-template>
-			</xsl:if> -->
+			</xsl:if>
 		</xsl:if>
 	</xsl:template>
-
-
 
 
 	<!-- ********* Parsing LOM Fields ************ -->
