@@ -110,9 +110,8 @@
             <enumeration value="localisation educational team member"/>
             <enumeration value="technical localisation team member"/>
             <enumeration value="uploader"/>
-	    <enumeration value="unknown"/>
-	    
-	    <enumeration value="producer"/>
+	        <enumeration value="unknown"/>
+	        <enumeration value="producer"/>
             <enumeration value="production director"/>
             <enumeration value="production assistant"/>
             <enumeration value="director"/>
@@ -166,10 +165,10 @@
     <simpleType name="techReqType">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="λειτουργικό σύστημα"/>
-            <enumeration value="φυλλομετρητής"/>
-            <enumeration value="πρόσθετα"/>
-            <enumeration value="λογισμικό"/>
+            <enumeration value="operating system"/>
+            <enumeration value="browser"/>
+            <enumeration value="plug-in"/>
+            <enumeration value="software"/>
         </restriction>
     </simpleType>
 
@@ -211,74 +210,105 @@
     <simpleType name="mimeType">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="one"/>
-            <enumeration value="two"/>
-            <enumeration value="three"/>
+            <enumeration value="application/base64"/>
+            <enumeration value="application/binary"/>
+            <enumeration value="application/java"/>
+            <enumeration value="application/macbinhex40"/>
+            <enumeration value="application/msexcel"/>
+            <enumeration value="application/msword"/>
+            <enumeration value="application/ogg"/>
+            <enumeration value="application/pdf"/>
+            <enumeration value="application/postscript"/>
+            <enumeration value="application/ppt"/>
+            <enumeration value="application/rtf"/>
+            <enumeration value="application/uue"/>
+            <enumeration value="application/x-compressed"/>
+            <enumeration value="application/x-gzip-compressed"/>
+            <enumeration value="application/x-pn-realmedia"/>
+            <enumeration value="application/x-shockwave-flash"/>
+            <enumeration value="application/x-stuffit"/>
+            <enumeration value="application/x-zip-compressed"/>
+            <enumeration value="application/zip"/>
+            <enumeration value="audio/basic"/>
+            <enumeration value="audio/midi"/>
+            <enumeration value="audio/mp3"/>
+            <enumeration value="audio/mpeg"/>
+            <enumeration value="audio/wav"/>
+            <enumeration value="audio/x-pn-realaudio"/>
+            <enumeration value="audio/x-pn-realaudio-plugin"/>
+            <enumeration value="image/bmp"/>
+            <enumeration value="image/gif"/>
+            <enumeration value="image/jpeg"/>
+            <enumeration value="image/png"/>
+            <enumeration value="image/tiff"/>
+            <enumeration value="image/x-wmf"/>
+            <enumeration value="text/html"/>
+            <enumeration value="text/plain"/>
+            <enumeration value="text/richtext"/>
+            <enumeration value="text/xml"/>
+            <enumeration value="video/avi"/>
+            <enumeration value="video/mpeg"/>
+            <enumeration value="video/quicktime"/>
+            <enumeration value="video/x-pn-realvideo"/>
+            <enumeration value="video/x-pn-realvideo-plugin"/>
+            <enumeration value="video/mp4"/>
         </restriction>
     </simpleType>
 
     <simpleType name="interactivityType">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="ενεργό/διαδραστικό"/>
-            <enumeration value="αφηγηματικό"/>
-            <enumeration value="μικτό"/>	
+            <enumeration value="active"/>
+            <enumeration value="expositive"/>
+            <enumeration value="mixed"/>	
         </restriction>
     </simpleType>
 
     <simpleType name="learningResourceType">
         <restriction base="token">
             <!-- IEEE LOM default values -->
-            <enumeration value="άσκηση"/>
-            <enumeration value="προσομοίωση"/>
-            <enumeration value="ερωτηματολόγιο"/>
-            <enumeration value="διάγραμμα"/>
-            <enumeration value="σχήμα"/>
-            <enumeration value="γράφημα"/>
-            <enumeration value="ευρετήριο"/>
-            <enumeration value="διαφάνεια"/>
-            <enumeration value="πίνακας"/>
-            <enumeration value="αφηγηματικό κείμενο"/>
-            <enumeration value="διαγώνισμα"/>
-            <enumeration value="πείραμα"/>
-            <enumeration value="διατύπωση προβλήματος"/>
-            <enumeration value="αυτοαξιολόγηση"/>
-            <enumeration value="διάλεξη"/>			
+            <enumeration value="image"/>
+            <enumeration value="text"/>
+            <enumeration value="audio"/>
+            <enumeration value="video"/>
+            <enumeration value="model"/>
+            <enumeration value="3D/VR"/>
+            <enumeration value="artifact"/>
+            <enumeration value="map"/>
+            <enumeration value="conceptual map"/>
+            <enumeration value="music score"/>
+            <enumeration value="broadcast"/>
+            <enumeration value="data"/>
+            <enumeration value="dynamic visual representation"/>
+            <enumeration value="visualisation"/>
+            <enumeration value="simulation"/>			
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="εικόνα"/>
-            <enumeration value="κείμενο"/>
-            <enumeration value="ήχος"/>
-            <enumeration value="βίντεο"/>
-            <enumeration value="μοντέλο"/>
-            <enumeration value="αναπαραστάσεις δεδομένων"/>
-            <enumeration value="διερεύνηση"/>
-            <enumeration value="ανοιχτή δραστηριότητα"/>
-            <enumeration value="ερευνητική δραστηριότητα"/>
-            <enumeration value="έργο"/>
-            <enumeration value="εκπαιδευτικό παιχνίδι"/>
-            <enumeration value="ασκήσεις πρακτικής και εξάσκησης"/>
-            <enumeration value="αξιολόγηση"/>
-            <enumeration value="μελέτη περίπτωσης"/>
-            <enumeration value="επίδειξη"/>
-            <enumeration value="παρουσίαση"/>
-            <enumeration value="εκπαιδευτικό σενάριο - σχέδιο μαθήματος"/>
-            <enumeration value="μάθημα"/>
-            <enumeration value="παιχνίδι ρόλων"/>
-            <enumeration value="εφαρμογή"/>
-            <enumeration value="εργαλείο"/>
-            <enumeration value="γλωσσάρι"/>
-            <enumeration value="οδηγός"/>
-            <enumeration value="διδακτικό εγχειρίδιο"/>
-            <enumeration value="πηγή - αναφορά"/>
-            <enumeration value="αναμετάδοση"/>
-            <enumeration value="ιστοσελίδα"/>
-            <enumeration value="ιστολόγιο"/>
-            <enumeration value="wiki"/>
-            <enumeration value="μέσο κοινωνικής δικτύωσης"/>
-            <enumeration value="χάρτης"/>
-            <enumeration value="παρτιτούρα"/>
-            <enumeration value="εννοιολογικός χάρτης"/>
-            <enumeration value="άλλο"/>
+            <enumeration value="experiment"/>
+            <enumeration value="micro experiment"/>
+            <enumeration value="inquiry"/>
+            <enumeration value="exploration"/>
+            <enumeration value="project"/>
+            <enumeration value="openactivity"/>
+            <enumeration value="dril and practice"/>
+            <enumeration value="educational game"/>
+            <enumeration value="assessment"/>
+            <enumeration value="demonstration"/>
+            <enumeration value="presentation"/>
+            <enumeration value="timeline"/>
+            <enumeration value="educational scenario-lessonplan"/>
+            <enumeration value="course"/>
+            <enumeration value="application"/>
+            <enumeration value="tool"/>
+            <enumeration value="glossary"/>
+            <enumeration value="guide"/>
+            <enumeration value="textbook"/>
+            <enumeration value="reference"/>
+            <enumeration value="website"/>
+            <enumeration value="educational software tool"/>
+            <enumeration value="open learning environment"/>
+            <enumeration value="educational multimedia title"/>
+            <enumeration value="set of educational scenarios"/>
+            <enumeration value="other"/>
         </restriction>
     </simpleType>
 
