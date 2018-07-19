@@ -382,11 +382,14 @@
     <simpleType name="purpose">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="θεματική περιοχή"/>
-            <enumeration value="εκπαιδευτικός στόχος"/>
-            <enumeration value="επίπεδο γλωσσομάθειας"/>
-            <enumeration value="διδακτική/μαθησιακή προσέγγιση"/>
-            <enumeration value="ειδικές ανάγκες"/>
+            <enumeration value="discipline"/>
+            <enumeration value="language level"/>
+            <enumeration value="educational objective"/>
+            <enumeration value="teaching/learning approach"/>
+            <enumeration value="special needs"/>
+            <enumeration value="video pedagogical use"/>
+            <enumeration value="video language"/>
+           
         </restriction>
     </simpleType>
 
