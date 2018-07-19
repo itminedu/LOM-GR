@@ -2,3 +2,6 @@
 */_book/*
 /lom-gr-book/book*pdf
 .project
+*.swo
+*.swp
+*~
