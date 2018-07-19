@@ -327,27 +327,26 @@
     <simpleType name="intendedEndUserRole">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="μαθητής"/>
-            <enumeration value="εκπαιδευτικός"/>
-            <enumeration value="δημιουργός"/>
-            <enumeration value="διοικητικό στέλεχος"/>
-            <enumeration value="γονέας"/>
-            <enumeration value="σύμβουλος"/>
-            <enumeration value="άλλος"/>
+            <enumeration value="learner"/>
+            <enumeration value="teacher"/>
+            <enumeration value="parent"/>
+            <enumeration value="counsellor"/>
+            <enumeration value="author"/>
+            <enumeration value="manager"/>
+            <enumeration value="other"/>
         </restriction>
     </simpleType>
 
     <simpleType name="context">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="προσχολική"/>
-            <enumeration value="δημοτικό"/>
-            <enumeration value="γυμνάσιο"/>
-            <enumeration value="γενικό λύκειο"/>
-            <enumeration value="τεχνολογικό λύκειο"/>
-            <enumeration value="επαγγελματική σχολή"/>
-            <enumeration value="ειδική αγωγή"/>
-            <enumeration value="άλλο"/>
+            <enumeration value="pre-primary"/>
+            <enumeration value="primary"/>
+            <enumeration value="lower secondary"/>
+            <enumeration value="higher secondary"/>
+            <enumeration value="vocational education"/>
+            <enumeration value="special education"/>
+            <enumeration value="other"/>
         </restriction>
     </simpleType>
 
