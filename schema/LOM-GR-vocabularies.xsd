@@ -364,23 +364,18 @@
     <simpleType name="kind">
         <restriction base="token">
             <!-- IEEE LOM default values -->
-            <enumeration value="είναιμέροςτου"/>
-            <enumeration value="έχειμέρος"/>
-            <enumeration value="είναιέκδοσητου"/>
-            <enumeration value="έχειέκδοση"/>
-            <enumeration value="είναιμορφήτου"/>
-            <enumeration value="έχειμορφή"/>
-            <enumeration value="αναφέρεταισε"/>
-            <enumeration value="αναφέρεταιαπό"/>
-            <enumeration value="βασίζεταισε"/>
-            <enumeration value="είναιβάσηγια"/>
-            <enumeration value="απαιτεί"/>
-            <enumeration value="απαιτείταιαπό"/>
-            <!-- Photodentro DS AP extended values -->
-            <enumeration value="έχειπροεπισκόπηση"/>
-            <enumeration value="είναιπροεπισκόπησητου"/>
-            <enumeration value="είναιμετάφρασητου"/>
-            <enumeration value="έχειμετάφραση"/>
+            <enumeration value="hasThumbnail"/>
+            <enumeration value="hasPreview"/>
+            <enumeration value="isShownAt"/>
+            <enumeration value="belongsToCollection"/>
+            <enumeration value="hasOrigin"/>
+            <enumeration value="isLinkedIn"/>
+            <enumeration value="isPartOf"/>
+            <enumeration value="hasPart"/>
+            <enumeration value="hasNext"/>
+            <enumeration value="hasPrevious"/>
+            <enumeration value="hasRelation"/>
+          
         </restriction>
     </simpleType>
 
@@ -398,8 +393,8 @@
     <simpleType name="yesNo">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="ναι"/>
-            <enumeration value="όχι"/>
+            <enumeration value="yes"/>
+            <enumeration value="no"/>
         </restriction>
     </simpleType>
 
