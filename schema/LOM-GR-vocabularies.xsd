@@ -31,14 +31,11 @@
     <simpleType name="status">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="προσχέδιο"/>
-            <enumeration value="τελικό"/>
-            <enumeration value="αναθεωρημένο"/>
-            <enumeration value="μη διαθέσιμο"/>
             <enumeration value="draft"/>
             <enumeration value="final"/>
             <enumeration value="revised"/>
             <enumeration value="unavailable"/>
+            
         </restriction>
     </simpleType>
 
@@ -312,6 +309,7 @@
         </restriction>
     </simpleType>
 
+    
     <simpleType name="semanticDensity">
         <restriction base="token">
             <!-- IEEE LOM default values -->
