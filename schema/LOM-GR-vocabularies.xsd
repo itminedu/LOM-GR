@@ -21,8 +21,9 @@
     <simpleType name="aggregationLevel">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="ατομικό μαθησιακό αντικείμενο"/>
-            <enumeration value="σύνθετο μαθησιακό αντικείμενο"/>
+            <enumeration value="1"/>
+            <enumeration value="2"/>
+            <enumeration value="3"/>
         </restriction>
     </simpleType>
 
@@ -34,6 +35,10 @@
             <enumeration value="τελικό"/>
             <enumeration value="αναθεωρημένο"/>
             <enumeration value="μη διαθέσιμο"/>
+            <enumeration value="draft"/>
+            <enumeration value="final"/>
+            <enumeration value="revised"/>
+            <enumeration value="unavailable"/>
         </restriction>
     </simpleType>
 
@@ -41,23 +46,91 @@
     <simpleType name="role">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="δημιουργός"/>
-            <enumeration value="εμπνευστής"/>
-            <enumeration value="επικυρωτής"/>
-            <enumeration value="επιμελητής"/>
-            <enumeration value="τεχνικός υλοποίησης"/>
-            <enumeration value="πάροχος περιεχομένου"/>
-            <enumeration value="τεχνικός επικυρωτής"/>
-            <enumeration value="παιδαγωγικός επικυρωτής"/>
-            <enumeration value="συγγραφέας σεναρίου"/>
-            <enumeration value="υπεύθυνος παιδαγωγικού σχεδιασμού"/>
-            <enumeration value="ειδήμων γνωστικού αντικειμένου"/>
-            <enumeration value="συντονιστής ομάδας σχεδιασμού και ανάπτυξης"/>
-            <enumeration value="επιστημονικός υπεύθυνος"/>
-            <enumeration value="αδειοδότης"/>
-            <enumeration value="χορηγός"/>
-            <enumeration value="πιστοποιητής"/>
-            <enumeration value="άγνωστος"/>
+            <enumeration value="funder"/>
+            <enumeration value="funding"/>
+            <enumeration value="funding framework"/>
+            <enumeration value="program/project"/>
+            <enumeration value="duration"/>
+            <enumeration value="main beneficiary/contractor"/>
+            <enumeration value="coordinator/leader"/>
+            <enumeration value="project/program partners"/>
+            <enumeration value="action"/>
+            <enumeration value="action coordinator/leader"/>
+            <enumeration value="subcontract"/>
+            <enumeration value="subcontractor"/>
+            <enumeration value="subcontract leader/coordinator"/>
+            <enumeration value="supervising and monitoring authority"/>
+            <enumeration value="team coordinator"/>
+            <enumeration value="scientific coordinator"/>
+            <enumeration value="pedagogical coordinator"/>
+            <enumeration value="technical manager"/>
+            <enumeration value="initiator"/>
+            <enumeration value="creator"/>
+            <enumeration value="original work creator"/>
+            <enumeration value="script writer"/>
+            <enumeration value="instructional designer"/>
+            <enumeration value="pedagogical design group member"/>
+            <enumeration value="subject matter expert"/>
+            <enumeration value="educational team member"/>
+            <enumeration value="content provider"/>
+            <enumeration value="content editor"/>
+            <enumeration value="editor"/>
+            <enumeration value="technical designer"/>
+            <enumeration value="technical design group member"/>
+            <enumeration value="technical team member"/>
+            <enumeration value="technical implementer"/>
+            <enumeration value="adaptation"/>
+            <enumeration value="graphical designer"/>
+            <enumeration value="project consultant/reviewer"/>
+            <enumeration value="pedagogical consultant/reviewer"/>
+            <enumeration value="technical consultant/reviewer"/>
+            <enumeration value="technical validator"/>
+            <enumeration value="educational validator"/>
+            <enumeration value="validator"/>
+            <enumeration value="certifier"/>
+            <enumeration value="quality seal"/>
+            <enumeration value="provider"/>
+            <enumeration value="licensor"/>
+            <enumeration value="publisher"/>
+            <enumeration value="supervising and monitoring authority for localisation"/>
+            <enumeration value="original version creator"/>
+            <enumeration value="localisation"/>
+            <enumeration value="localisation project coordinator"/>
+            <enumeration value="localisation scientific coordinator"/>
+            <enumeration value="pedagogical localisation consultant"/>
+            <enumeration value="localisation team coordinator"/>
+            <enumeration value="localisation project consultant/reviewer"/>
+            <enumeration value="pedagogical localisation consultant/reviewer"/>
+            <enumeration value="technical localisation consultant/reviewer"/>
+            <enumeration value="translation"/>
+            <enumeration value="translation editor"/>
+            <enumeration value="graphics localisation"/>
+            <enumeration value="supportive material author"/>
+            <enumeration value="localisation validator"/>
+            <enumeration value="localisation educational team member"/>
+            <enumeration value="technical localisation team member"/>
+            <enumeration value="uploader"/>
+	    <enumeration value="unknown"/>
+	    
+	    <enumeration value="producer"/>
+            <enumeration value="production director"/>
+            <enumeration value="production assistant"/>
+            <enumeration value="director"/>
+            <enumeration value="director assistant"/>
+            <enumeration value="journalistic editing"/>
+            <enumeration value="actor/actress"/>
+            <enumeration value="broadcaster"/>
+            <enumeration value="assistant"/>
+            <enumeration value="photography director"/>
+            <enumeration value="camera operator"/>
+            <enumeration value="sound engineer"/>
+            <enumeration value="visual effects"/>
+            <enumeration value="music editing"/>
+            <enumeration value="creative"/>
+            <enumeration value="digital editing"/>
+            <enumeration value="montage/film editing"/>
+            <enumeration value="subtitling"/>
+
         </restriction>
     </simpleType>
 
@@ -65,10 +138,28 @@
     <simpleType name="metaRole">
         <restriction base="token">
             <!-- Photodentro DS AP extended values -->
-            <enumeration value="μετασχολιαστής"/>
-            <enumeration value="εμπλουτιστής"/>
-            <enumeration value="πάροχος"/>
-            <enumeration value="επικυρωτής"/>
+            <enumeration value="metadata author"/>
+            <enumeration value="metadata enricher"/>
+            <enumeration value="metadata validator"/>
+            <enumeration value="metadata metadata coordinator"/>
+            <enumeration value="metadata provider"/>
+            <enumeration value="metadata publisher"/>
+            <enumeration value="metadata licensor"/>
+            <enumeration value="metadata certifier"/>
+            <enumeration value="metadata quality seal"/>
+            <enumeration value="metadata funder"/>
+            <enumeration value="metadata funding"/>
+            <enumeration value="metadata funding framework"/>
+            <enumeration value="metadata authoring program/project"/>
+            <enumeration value="metadata authoring program/project full title"/>
+            <enumeration value="metadata authoring program/project duration"/>
+            <enumeration value="main beneficiary/contractor"/>
+            <enumeration value="coordinator/leader"/>
+            <enumeration value="project/program partners"/>
+            <enumeration value="subcontract"/>
+            <enumeration value="subcontractor"/>
+            <enumeration value="subcontract leader/coordinator"/>
+            <enumeration value="supervising and monitoring authority"/>
         </restriction>
     </simpleType>
 
